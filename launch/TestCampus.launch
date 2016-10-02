@@ -1,0 +1,94 @@
+<launch>
+  <node pkg="lidar_scv" name="lidar_scv_campus_node" type="lidar_scv_node" >
+    <param name="topic_LiDAR_rear" value="/lidar1/scan" />
+    <param name="topic_LiDAR_front" value="/lidar2/scan" />
+    <param name="topic_LiDAR_left" value="/lidar3/scan" />
+    <param name="topic_LiDAR_right" value="/lidar4/scan" />
+    <param name="topic_ublox" value="/ublox_msgs" />
+    <param name="topic_vehicle" value="/vehicle_status" />
+    <param name="topic_nova" value="/nova" />
+
+    <param name="bag_use" value="true" />
+    <param name="bag_path" value="/mnt/1TB_HDD/bag/160825_CBNU_RTK_UBLOX_LIDAR.bag" />
+    <param name="bag_start_time" value="0.0" />
+    <param name="bag_period" value="0.0" />
+
+    <param name="debug_mode_road" value="3" />
+
+    <param name="vehicle_width" value="1.8" />
+    <param name="vehicle_length" value="4.57" />
+
+    <param name="vehicle_pos_x" value="0.0" />
+    <param name="vehicle_pos_y" value="0.0" />
+    <param name="vehicle_pos_head" value="0.0" />
+
+    <param name="scan_range_min" value="1.0" />
+    <param name="scan_range_max" value="60.0" />
+    <param name="scan_dir_invert" value="true" />
+    <param name="scan_angle_min" value="-1.658063" />
+    <param name="scan_angle_max" value="1.658063" />
+    <param name="scan_angle_increment_LiDAR_rear" value="0.011636" />
+    <param name="scan_angle_increment_LiDAR_front" value="0.011636" />
+    <param name="scan_angle_increment_LiDAR_left" value="0.011636" />
+    <param name="scan_angle_increment_LiDAR_right" value="0.002909" />
+
+    <param name="map_load_map" value="true" />
+    <param name="map_save_map" value="false" />
+
+    <param name="map_filepath_read" value="$(find lidar_scv)/map/TestCampus/map_lastcreated.bmp" />
+    <param name="map_filepath_write" value="/home/scv/clothoid_ws/src/lidar/map/map_lastcreated.bmp" />
+
+    <param name="map_size_x" value="2048" />
+    <param name="map_size_y" value="2048" />
+    <param name="map_resolution" value="0.1" />
+    <param name="map_mapping_dist_thres" value="0.3" />
+    <param name="map_mapping_rot_thres" value="0.06" />
+    <param name="map_occ_prob" value="0.90" />
+    <param name="map_free_prob" value="0.40" />
+
+    <param name="match_without_mapping" value="true" />
+    <param name="match_period" value="0.005" />
+    <param name="match_maxiter" value="10" />
+
+    <param name="roadext_bp_dis_thres" value="1.0" />
+    <param name="roadext_dis_thres" value="0.12" />
+    <param name="roadext_dis_break_thres" value="0.02" />
+    <param name="roadext_angle_thres" value="0.139626" />
+    <param name="roadext_diff_index_thres" value="3" />
+    <param name="roadext_length_thres" value="2.0" />
+    <param name="roadext_safety_width" value="8.0" />
+    <param name="roadext_center_width" value="2.0" />
+
+    <param name="tf_center_x" value="0" />
+    <param name="tf_center_y" value="0" />
+    <param name="tf_center_z" value="1.48" />
+    <param name="tf_center_ax" value="0" />
+    <param name="tf_center_ay" value="0" />
+    <param name="tf_center_az" value="0" />
+    <param name="tf_lidar1_x" value="-1.595" />
+    <param name="tf_lidar1_y" value="0" />
+    <param name="tf_lidar1_z" value="0.050" />
+    <param name="tf_lidar1_ax" value="0" />
+    <param name="tf_lidar1_ay" value="0.28798" />
+    <param name="tf_lidar1_az" value="3.14159265359" />
+    <param name="tf_lidar2_x" value="1.910" />
+    <param name="tf_lidar2_y" value="0" />
+    <param name="tf_lidar2_z" value="-0.880" />
+    <param name="tf_lidar2_ax" value="0" />
+    <param name="tf_lidar2_ay" value="0" />
+    <param name="tf_lidar2_az" value="0" />
+    <param name="tf_lidar3_x" value="0.116" />
+    <param name="tf_lidar3_y" value="0.420" />
+    <param name="tf_lidar3_z" value="0.048" />
+    <param name="tf_lidar3_ax" value="0" />
+    <param name="tf_lidar3_ay" value="0.10472" />
+    <param name="tf_lidar3_az" value="0" />
+    <param name="tf_lidar4_x" value="0.120" />
+    <param name="tf_lidar4_y" value="-0.420" />
+    <param name="tf_lidar4_z" value="0.050" />
+    <param name="tf_lidar4_ax" value="0" />
+    <param name="tf_lidar4_ay" value="0.28798" />
+    <param name="tf_lidar4_az" value="0" />
+
+  </node>
+</launch>
